@@ -17,20 +17,20 @@ public class PathFinder {
 
 		this.locations.keySet().toArray(labels);
 
-		for (int i = 0; i < labels.length; i++) {
+		//for (int i = 0; i < labels.length; i++) {
 			ArrayList<String> x = new ArrayList<String>();
 
-			for (int j = 0; j < labels.length; j++) {
-				if (i != j) {
+			for (int j = 1; j < labels.length; j++) {
+				//if (i != j) {
 					x.add(labels[j]);
-				}
+				//}
 			}
 
-			Path path = new Path(this.locations.get(labels[i]), this.locations, x);
+			Path path = new Path(this.locations.get(labels[0]), this.locations, x);
 			
 			this.paths.add(path);
 			
 			path.run();
-		}
+		//}
 	}
 }

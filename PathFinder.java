@@ -12,6 +12,7 @@ public class PathFinder {
 
 	public void outputPaths() {
 		int count = this.locations.size();
+
 		String[] labels = new String[count];
 
 		this.locations.keySet().toArray(labels);
@@ -25,7 +26,11 @@ public class PathFinder {
 				}
 			}
 
-			System.out.println(labels[i] + "->" + String.join("->", x));
+			Path path = new Path(this.locations.get(labels[i]), this.locations, x);
+			
+			this.paths.add(path);
+			
+			path.run();
 		}
 	}
 }
